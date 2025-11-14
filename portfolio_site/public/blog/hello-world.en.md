@@ -6,6 +6,7 @@ A blog is, by definition, something public — written for people to read. Which
 I was honestly torn about whether to write anything at all. Maybe one day when I’m job-hunting or applying to PhD programs, some interviewer will scroll through what I’ve written and think, “This person doesn’t seem like someone who does math or CS,” or maybe they’ll catch some weakness in my personality. So I figured — better not risk it. Words have power.
 
 So I decided that on evanyuan.dev/blog I’ll put the good stuff — the positive, the academic, the polished.
+
 The whole blog is built with Node.js, the classic HTML/CSS/JS trio. I’m not that familiar with front-end, so I crash-learned it in two days and pieced together something simple. The back-end is a lightweight Flask setup for handling forms — that’s the GuestBook section under the main evanyuan.dev domain.
 
 The blog has three sections: Miscellany, On Coding, and On Music. Realistically, On Coding will probably grow the fastest — I’ll record parts of my learning path: fun algorithms, small insights from Kaggle competitions, that kind of thing. Music-wise, I’ll talk about the classical pieces I love. Recently I’ve been listening to a lot of Bruckner, so maybe I’ll write something if I have time.
