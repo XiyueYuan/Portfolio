@@ -94,9 +94,7 @@ async function loadPost(p) {
   titleEl.textContent = p.title[lang];
   innerEl.innerHTML = '<p>Loading…</p>';
   try {
-    const res = await fetch(p.file[lang]);
-    if (!res.ok) throw new Error('404');
-    const md = await res.text();
+    const md = await getMarkdownWithFallback(p.file[lang]);
     innerEl.innerHTML = marked.parse(md);
     if (typeof window !== 'undefined' && window.hljs) hljs.highlightAll();
     document.getElementById('btn-en-in').classList.toggle('active', lang === 'en');
@@ -166,3 +164,21 @@ window.addEventListener('hashchange', () => {
 });
 
 renderList();
+async function getMarkdownWithFallback(url) {
+  try {
+    const primary = await fetch(url);
+    if (primary.ok) return await primary.text();
+  } catch (_) {}
+  try {
+    const u = new URL(url);
+    const hosts = ['https://blog.evanyuan.dev', 'https://evan-blog-five.vercel.app'];
+    for (const h of hosts) {
+      const alt = h + u.pathname;
+      try {
+        const res = await fetch(alt);
+        if (res.ok) return await res.text();
+      } catch (_) {}
+    }
+  } catch (_) {}
+  throw new Error('fallback_failed');
+}
