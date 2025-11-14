@@ -20,6 +20,9 @@ const mimeTypes = {
 const server = http.createServer((req, res) => {
   const cleanUrl = req.url.split('?')[0];
   let filePath = path.join(publicDir, cleanUrl === '/' ? 'index.html' : cleanUrl);
+  if (cleanUrl === '/blog' || cleanUrl === '/blog/') {
+    filePath = path.join(publicDir, 'blog.html');
+  }
 
   fs.stat(filePath, (err, stat) => {
     if (err) {
@@ -64,4 +67,3 @@ server.on('error', (err) => {
 server.listen(port, () => {
   console.log(`http://localhost:${port}`);
 });
-

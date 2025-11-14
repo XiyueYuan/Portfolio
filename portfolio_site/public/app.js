@@ -10,18 +10,16 @@ const heroSection = document.querySelector('#hello');
 const heroInner = document.querySelector('.hero-inner');
 
 function updateHeroZoom() {
+  if (!heroSection || !heroInner) return;
   const scrollY = window.scrollY;
   const windowHeight = window.innerHeight;
-  
-  // Only apply zoom effect when we're in the hero section
   if (scrollY < windowHeight) {
     const progress = scrollY / windowHeight;
-    const scale = 1 + progress * 0.3; // Zoom in by 30% max
-    const opacity = 1 - progress * 0.5; // Fade out as we scroll
-    
+    const scale = 1 + progress * 0.3;
+    const opacity = 1 - progress * 0.5;
     heroSection.style.transform = `scale(${scale})`;
     heroInner.style.opacity = opacity;
-    heroInner.style.transform = `translateY(${scrollY * 0.2}px)`; // Parallax effect
+    heroInner.style.transform = `translateY(${scrollY * 0.2}px)`;
   }
 }
 
