@@ -33,7 +33,7 @@ const posts = [
     date: '2025-11-14',
     category: 'On Coding',
     title: { en: 'N-Gram Markov', zh: 'N-Gram Markov' },
-    excerpt: { en: 'dip into the basic idea of Markov chain', zh: '探索 Markov chain 基本原理' },
+    excerpt: { en: 'Dip into the basic idea of Markov chain', zh: '探索 Markov chain 基本原理' },
     file: { en: '/blog/2-gram_markov.en.md', zh: '/blog/2-gram_markov.zh.md' }
   }
 ];
