@@ -29,12 +29,12 @@ const posts = [
     file: { en: '/blog/hello-world.en.md', zh: '/blog/hello-world.zh.md' }
   },
   {
-    slug: 'test-one',
+    slug: 'N-Gram Markov',
     date: '2025-11-14',
-    category: 'On Music',
-    title: { en: 'Test Post', zh: '测试文章' },
-    excerpt: { en: 'A sample blog post', zh: '示例博客文章' },
-    file: { en: '/blog/test.md', zh: '/blog/test.md' }
+    category: 'On Coding',
+    title: { en: 'N-Gram Markov', zh: 'N-Gram Markov' },
+    excerpt: { en: 'dip into the basic idea of Markov chain', zh: '探索 Markov chain 基本原理' },
+    file: { en: '/blog/2-gram_markov.en.md', zh: '/blog/2-gram_markov.zh.md' }
   }
 ];
 
@@ -82,7 +82,7 @@ function renderList() {
       <p class="post-excerpt">${p.excerpt[lang]}</p>
       <a class="read-more" href="#">Read more</a>
     `;
-    div.onclick = () => { window.location.hash = p.slug; loadPost(p); };
+    div.onclick = () => { window.location.hash = encodeURIComponent(p.slug); loadPost(p); };
     listEl.appendChild(div);
   });
 }
@@ -95,8 +95,22 @@ async function loadPost(p) {
   innerEl.innerHTML = '<p>Loading…</p>';
   try {
     const md = await getMarkdownWithFallback(p.file[lang]);
-    innerEl.innerHTML = marked.parse(md);
+    const rawHtml = marked.parse(md);
+    const safeHtml = (typeof window !== 'undefined' && window.DOMPurify) ? DOMPurify.sanitize(rawHtml) : rawHtml;
+    innerEl.innerHTML = safeHtml;
     if (typeof window !== 'undefined' && window.hljs) hljs.highlightAll();
+    if (typeof window !== 'undefined' && window.renderMathInElement) {
+      renderMathInElement(innerEl, {
+        delimiters: [
+          { left: '$$', right: '$$', display: true },
+          { left: '$', right: '$', display: false },
+          { left: '\\(', right: '\\)', display: false },
+          { left: '\\[', right: '\\]', display: true }
+        ],
+        throwOnError: false
+      });
+    }
+    buildAnchorsAndToc();
     document.getElementById('btn-en-in').classList.toggle('active', lang === 'en');
     document.getElementById('btn-zh-in').classList.toggle('active', lang === 'zh');
   } catch (e) {
@@ -108,7 +122,7 @@ function switchLang(l) {
   lang = l;
   if (contentEl.style.display === 'none') renderList();
   else {
-    const slug = window.location.hash.slice(1);
+    const slug = decodeURIComponent(window.location.hash.slice(1));
     const p = posts.find(x => x.slug === slug);
     if (p) loadPost(p);
   }
@@ -136,7 +150,7 @@ backBtn.onclick = (ev) => {
 sortSelect.addEventListener('change', () => {
   sortMode = sortSelect.value;
   if (contentEl.style.display === 'none') renderList(); else {
-    const slug = window.location.hash.slice(1);
+    const slug = decodeURIComponent(window.location.hash.slice(1));
     const p = posts.find(x => x.slug === slug);
     if (!p) renderList();
   }
@@ -144,7 +158,7 @@ sortSelect.addEventListener('change', () => {
 themeSelect.addEventListener('change', () => {
   currentCat = themeSelect.value;
   if (contentEl.style.display === 'none') renderList(); else {
-    const slug = window.location.hash.slice(1);
+    const slug = decodeURIComponent(window.location.hash.slice(1));
     const p = posts.find(x => x.slug === slug);
     if (!p) renderList();
   }
@@ -156,7 +170,7 @@ searchInput.addEventListener('input', () => {
 });
 
 window.addEventListener('hashchange', () => {
-  const slug = window.location.hash.slice(1);
+  const slug = decodeURIComponent(window.location.hash.slice(1));
   if (slug) {
     const p = posts.find(x => x.slug === slug);
     if (p) loadPost(p);
@@ -181,4 +195,32 @@ async function getMarkdownWithFallback(url) {
     }
   } catch (_) {}
   throw new Error('fallback_failed');
+}
+
+function buildAnchorsAndToc() {
+  const tocEl = document.getElementById('toc');
+  const listEl = tocEl ? tocEl.querySelector('ul') : null;
+  if (!tocEl || !listEl) return;
+  listEl.innerHTML = '';
+  const hs = innerEl.querySelectorAll('h1, h2, h3, h4');
+  hs.forEach(h => {
+    const id = h.id || h.textContent.trim().toLowerCase().replace(/\s+/g,'-').replace(/[^a-z0-9\-]/g,'');
+    if (!h.id) h.id = id;
+    if (!h.querySelector('a.anchor')) {
+      const a = document.createElement('a');
+      a.className = 'anchor';
+      a.href = `#${id}`;
+      a.textContent = '#';
+      a.style.marginLeft = '8px';
+      a.style.opacity = '0.6';
+      h.appendChild(a);
+    }
+    const li = document.createElement('li');
+    const link = document.createElement('a');
+    link.href = `#${id}`;
+    link.textContent = h.textContent.replace('#','').trim();
+    li.style.marginLeft = (h.tagName === 'H2') ? '8px' : (h.tagName === 'H3') ? '16px' : (h.tagName === 'H4') ? '24px' : '0px';
+    li.appendChild(link);
+    listEl.appendChild(li);
+  });
 }
