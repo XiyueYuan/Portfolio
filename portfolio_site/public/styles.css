@@ -25,6 +25,140 @@ main, .footer {
   width: calc(100% / 1.2);
   margin: 0 auto;
 }
+
+/* Mobile responsive design */
+@media (max-width: 768px) {
+  /* Remove scaling on mobile to prevent overflow */
+  main, .footer {
+    transform: scale(1);
+    width: 100%;
+    padding: 0 16px;
+  }
+  
+  /* Adjust base font size for mobile */
+  body {
+    font-size: 14px;
+  }
+  
+  /* Hero section mobile optimization */
+  .hero-inner h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-inner p {
+    font-size: 1.1rem;
+  }
+  
+  /* Education frame mobile layout */
+  .education-frame {
+    flex-direction: column;
+    gap: 20px;
+    padding: 24px;
+  }
+  
+  .school-logo {
+    min-width: 80px;
+    height: 80px;
+  }
+  
+  .school-logo-img {
+    width: 60px;
+    height: 60px;
+  }
+  
+  /* Tech stack grid mobile layout */
+  .stack .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  
+  .item {
+    padding: 16px 20px;
+  }
+  
+  .item i, .item img {
+    font-size: 40px;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .item span {
+    font-size: 14px;
+  }
+  
+  /* Form mobile optimization */
+  .form {
+    max-width: 100%;
+  }
+  
+  .field input, .field textarea {
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+  
+  /* Guestbook mobile optimization */
+  #guestbook {
+    padding: 80px 16px;
+  }
+  
+  #guestbook h2 {
+    font-size: 2rem;
+  }
+  
+  #guestbook p {
+    font-size: 1rem;
+  }
+  
+  /* CTA buttons mobile layout */
+  .cta {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+  
+  .btn {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+  
+  /* About section mobile optimization */
+  .about-point {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .point-number {
+    font-size: 2rem;
+  }
+  
+  .point-content h3 {
+    font-size: 1.3rem;
+  }
+  
+  .point-content p {
+    font-size: 1rem;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .hero-inner h1 {
+    font-size: 2rem;
+  }
+  
+  .stack .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .education-info h4 {
+    font-size: 1.3rem;
+  }
+  
+  .education-info p {
+    font-size: 1rem;
+  }
+}
 /* Enhanced starry night sky background */
 .bg {
   position: fixed; inset: 0; z-index: -1;
@@ -294,3 +428,124 @@ h3 { font-size: 28px; margin: 48px 0 20px; color: var(--muted); }
 #guestbook h2 { font-size: 48px; margin-bottom: 24px; }
 #guestbook p { font-size: 20px; margin-bottom: 40px; }
 #guestbook .btn { padding: 16px 24px; font-size: 18px; }
+
+/* Blog page mobile optimization */
+@media (max-width: 768px) {
+  /* Blog container mobile optimization */
+  .blog-container {
+    padding: 20px 16px;
+  }
+  
+  .blog-header {
+    padding: 24px 16px;
+  }
+  
+  .blog-header h1 {
+    font-size: 2rem;
+  }
+  
+  .blog-header p {
+    font-size: 1rem;
+  }
+  
+  /* Post list mobile layout */
+  .post-list {
+    padding: 0 16px;
+  }
+  
+  .post-item {
+    padding: 20px;
+    margin-bottom: 16px;
+  }
+  
+  .post-title {
+    font-size: 1.3rem;
+  }
+  
+  .post-excerpt {
+    font-size: 0.95rem;
+  }
+  
+  .post-meta {
+    font-size: 0.85rem;
+  }
+  
+  /* Blog post content mobile optimization */
+  .markdown-body {
+    padding: 0 16px 80px !important;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .markdown-body h1 {
+    font-size: 1.8rem;
+  }
+  
+  .markdown-body h2 {
+    font-size: 1.5rem;
+  }
+  
+  .markdown-body h3 {
+    font-size: 1.3rem;
+  }
+  
+  .markdown-body pre {
+    font-size: 0.85rem;
+    padding: 16px;
+    overflow-x: auto;
+  }
+  
+  .markdown-body code {
+    font-size: 0.85rem;
+  }
+  
+  .markdown-body img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .markdown-body table {
+    font-size: 0.9rem;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  /* Language selector mobile optimization */
+  .lang-selector {
+    top: 20px;
+    right: 16px;
+    font-size: 0.9rem;
+  }
+  
+  /* Back button mobile optimization */
+  .back-btn {
+    top: 20px;
+    left: 16px;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .blog-header h1 {
+    font-size: 1.7rem;
+  }
+  
+  .post-title {
+    font-size: 1.2rem;
+  }
+  
+  .markdown-body h1 {
+    font-size: 1.5rem;
+  }
+  
+  .markdown-body h2 {
+    font-size: 1.3rem;
+  }
+  
+  .markdown-body {
+    font-size: 0.95rem;
+  }
+}
