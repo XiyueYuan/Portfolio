@@ -35,6 +35,14 @@ const posts = [
     title: { en: 'N-Gram Markov', zh: 'N-Gram Markov' },
     excerpt: { en: 'Dip into the basic idea of Markov chain', zh: '探索 Markov chain 基本原理' },
     file: { en: '/blog/2-gram_markov.en.md', zh: '/blog/2-gram_markov.zh.md' }
+  },
+  {
+    slug: '0.1 + 0.2 ≠ 0.3',
+    date: '2025-11-16',
+    category: 'On Coding',
+    title: { en: '0.1 + 0.2 ≠ 0.3', zh: '0.1 + 0.2 ≠ 0.3' },
+    excerpt: { en: 'Exploring Numerical Precision in Computers and RREF', zh: '计算机精度的探索以及RREF' },
+    file: { en: '/blog/0.1_0.2_0.3.en.md', zh: '/blog/0.1_0.2_0.3.zh.md' }
   }
 ];
 
@@ -113,6 +121,7 @@ async function loadPost(p) {
         throwOnError: false
       });
     }
+    fixImagePaths();
     buildAnchorsAndToc();
     document.getElementById('btn-en-in').classList.toggle('active', lang === 'en');
     document.getElementById('btn-zh-in').classList.toggle('active', lang === 'zh');
@@ -246,5 +255,18 @@ function enhanceCodeBlocks() {
       };
       wrap.appendChild(btn);
     }
+  });
+}
+
+function fixImagePaths() {
+  const imgs = innerEl.querySelectorAll('img');
+  imgs.forEach(img => {
+    try {
+      const src = img.getAttribute('src') || '';
+      if (src.startsWith('assets/') || src.startsWith('./assets/')) {
+        const pathname = src.replace(/^\.\//, '');
+        img.setAttribute('src', '/blog/' + pathname);
+      }
+    } catch(_) {}
   });
 }
