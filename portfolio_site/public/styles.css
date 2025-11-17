@@ -226,6 +226,7 @@ h3 { font-size: 28px; margin: 48px 0 20px; color: var(--muted); }
   opacity: 0.15;
   z-index: 0;
   background-position: right -80px top 0px;
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
 }
 
 .education-frame.has-bg > * {
