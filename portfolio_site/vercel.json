@@ -1,12 +1,12 @@
 {
+  "version": 2,
   "functions": {
-    "api/message.js": {
-      "runtime": "nodejs20.x"
-    }
+    "api/**/*.js": { "runtime": "nodejs20.x" }
   },
   "routes": [
-    { "src": "^/api/(.*)$", "dest": "/api/$1.js" },
-    { "src": "^/blog/?$", "dest": "/public/blog.html" }
+    { "src": "^/api/(.*)$", "dest": "/api/$1" },
+    { "src": "^/$", "dest": "/public/index.html" },
+    { "src": "^/blog/?$", "dest": "/public/blog.html" },
+    { "src": "/(.*)", "dest": "/public/$1" }
   ]
 }
-
