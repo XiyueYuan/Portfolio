@@ -9,13 +9,14 @@ export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*')
   res.setHeader('Access-Control-Allow-Methods', 'POST,OPTIONS')
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type')
+  res.setHeader('Content-Type', 'application/json')
+
   if (req.method === 'OPTIONS') {
     res.status(200).end()
     return
   }
-
   if (req.method !== 'POST') {
-    res.status(405).json({ error: 'Only POST allowed' })
+    res.status(405).end(JSON.stringify({ error: 'Only POST allowed' }))
     return
   }
 
@@ -27,7 +28,11 @@ export default async function handler(req, res) {
     const { username, content } = body
 
     if (!process.env.SUPABASE_URL || !process.env.SUPABASE_KEY) {
-      res.status(500).json({ error: 'Supabase env missing' })
+      res.status(500).end(JSON.stringify({ error: 'Supabase env missing' }))
+      return
+    }
+    if (!username || !content) {
+      res.status(400).end(JSON.stringify({ error: 'Missing username or content' }))
       return
     }
 
@@ -36,12 +41,12 @@ export default async function handler(req, res) {
       .insert([{ username, content }])
 
     if (error) {
-      res.status(500).json({ error: error.message })
+      res.status(500).end(JSON.stringify({ error: error.message }))
       return
     }
 
-    res.status(200).json({ status: 'ok' })
+    res.status(200).end(JSON.stringify({ status: 'ok' }))
   } catch (e) {
-    res.status(500).json({ error: 'Server error' })
+    res.status(500).end(JSON.stringify({ error: 'Server error' }))
   }
 }

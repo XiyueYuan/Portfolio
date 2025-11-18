@@ -128,7 +128,13 @@ if (form) {
     const content = document.getElementById('msg')?.value || '';
     const payload = { username, content };
     try {
-      const api = '/api/message';
+      let api = '/api/message';
+      const host = window.location.hostname;
+      if (host === 'localhost') {
+        api = 'http://localhost:5050/api/message';
+      } else if (host === 'evanyuan.dev') {
+        api = 'https://www.evanyuan.dev/api/message';
+      }
       const res = await fetch(api, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
