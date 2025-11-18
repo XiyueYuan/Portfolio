@@ -158,16 +158,16 @@
     <section id="guestbook" class="section reveal">
       <h2>Guestbook</h2>
       <p>Your message is stored securely and only visible to the site owner.</p>
-      <form id="guestbook-form" class="form">
+      <form id="msgForm" class="form">
         <div class="field">
           <label>Name</label>
-          <input type="text" name="name" placeholder="Your name" required />
+          <input id="name" type="text" name="name" placeholder="Your name" required />
         </div>
         <div class="field">
           <label>Message</label>
-          <textarea name="message" placeholder="What would you like to say?" rows="4" required></textarea>
+          <textarea id="msg" name="message" placeholder="What would you like to say?" rows="4" required></textarea>
         </div>
-        <button type="submit" class="btn">Submit</button>
+        <button type="submit" class="btn">Send</button>
         <div id="form-status" class="status"></div>
       </form>
     </section>
