@@ -1,5 +1,11 @@
 {
+  "functions": {
+    "api/message.js": {
+      "runtime": "nodejs20.x"
+    }
+  },
   "routes": [
-    { "src": "^/blog/?$", "dest": "/blog.html" }
+    { "src": "/api/(.*)", "dest": "/api/$1.js" }
   ]
 }
+

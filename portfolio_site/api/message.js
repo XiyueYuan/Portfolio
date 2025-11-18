@@ -1,4 +1,7 @@
 import { createClient } from '@supabase/supabase-js'
+export const config = {
+  runtime: 'nodejs'
+}
 
 const supabase = createClient(
   process.env.SUPABASE_URL,
