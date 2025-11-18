@@ -95,18 +95,7 @@ main, .footer {
     font-size: 16px; /* Prevent zoom on iOS */
   }
   
-  /* Guestbook mobile optimization */
-  #guestbook {
-    padding: 80px 16px;
-  }
   
-  #guestbook h2 {
-    font-size: 2rem;
-  }
-  
-  #guestbook p {
-    font-size: 1rem;
-  }
   
   /* CTA buttons mobile layout */
   .cta {
@@ -419,15 +408,11 @@ h3 { font-size: 28px; margin: 48px 0 20px; color: var(--muted); }
 .reveal { opacity: 0; transform: translateY(12px) scale(.98); transition: opacity .6s ease, transform .6s ease; }
 .reveal.show { opacity: 1; transform: translateY(0) scale(1); }
 
-#guestbook { display: grid; place-items: center; text-align: center; padding: 160px 24px; }
 .form { margin: 0 auto; justify-self: center; max-width: 700px; width: 100%; }
 .field input, .field textarea { padding: 16px 18px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.25); color: var(--text); font-size: 18px; font-family: inherit; }
 .field input::placeholder, .field textarea::placeholder { font-family: inherit; }
 .field label { font-family: inherit; }
 .field textarea { min-height: 120px; }
-#guestbook h2 { font-size: 48px; margin-bottom: 24px; }
-#guestbook p { font-size: 20px; margin-bottom: 40px; }
-#guestbook .btn { padding: 16px 24px; font-size: 18px; }
 
 /* Blog page mobile optimization */
 @media (max-width: 768px) {

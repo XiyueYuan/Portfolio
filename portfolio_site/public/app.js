@@ -118,33 +118,4 @@ function createStarField() {
 // Initialize star field
 createStarField();
 
-const form = document.getElementById('msgForm');
-const statusEl = document.getElementById('form-status');
-if (form) {
-  form.addEventListener('submit', async (ev) => {
-    ev.preventDefault();
-    statusEl.textContent = 'Submitting...';
-    const username = document.getElementById('name')?.value || '';
-    const content = document.getElementById('msg')?.value || '';
-    const payload = { username, content };
-    try {
-      let api = '/api/message';
-      const host = window.location.hostname;
-      if (host === 'localhost') {
-        api = 'http://localhost:5050/api/message';
-      } else if (host === 'evanyuan.dev') {
-        api = 'https://www.evanyuan.dev/api/message';
-      }
-      const res = await fetch(api, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      });
-      if (!res.ok) throw new Error('Network error');
-      statusEl.textContent = 'Sent. Thank you!';
-      form.reset();
-    } catch (e) {
-      statusEl.textContent = 'Submission failed, please try again later';
-    }
-  });
-}
+// Guestbook removed
