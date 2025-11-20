@@ -14,5 +14,5 @@ The blog has three sections: Miscellany, On Coding, and On Music. Realistically,
 Miscellany will be the slowest to update. This Hello World post belongs there. Knowing that this section is public makes me very deliberate — I can’t write as freely. I’ll keep a private domain for the things I actually want to rant about. When I find something interesting in econ, politics, or history, maybe I’ll move a cleaned-up version over here.
 That’s about it.
 
-*Nov 13, 2025*
+*11/13/2025*
 *Written in University of Chicago, I-House Breckinridge Room 769*
