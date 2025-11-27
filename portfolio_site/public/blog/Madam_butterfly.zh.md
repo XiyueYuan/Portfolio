@@ -77,8 +77,6 @@ Cio-Cio-San（蝴蝶夫人的本名），一个明治时代的日本少女，用
 
 --爱情二重唱--
 
-在 Cio Cio San的观念里，爱情从来不是情绪，而是一项庄严的誓约。她说“我改了信仰”，不只是从神道转向基督教，而是将自己的生命交由 Pinkerton 这个人来决定：他是谁，我便成为什么人。毕竟，一个十五岁的少女，对着这个世界还抱着最纯真的期待。
-
 《蝴蝶夫人》中，第一幕结尾的爱情二重唱“Viene la sera”（夜幕低垂）与第三幕接近尾声的死亡三重唱“Io so che alle pene”（直译：“我知道她在受苦”）堪称全剧两大关键节点，一首在调性和氛围上浪漫迷人，另一首则悲痛凄绝，前后呼应。
 
 <video controls width="100%">
@@ -104,8 +102,8 @@ Cio-Cio-San安静地等待 Pinkerton，等待爱情，等待一场黎明，“�
 <source src="https://nzybgwsamowcamgizqmk.supabase.co/storage/v1/object/public/hum/8d256d08edcf14c87a68534dd2b084d1.mp4"/>
 </video>
 
---Chi Sia? 是谁？--
-"三年了，她眺望每一艘船，看看船的颜色和国旗。“悲剧的高峰。对我来说，这是全剧最让人心痛的一段。像孩子等妈妈回家一样甜，但我们知道 - 等到的不是拥抱，是最终的命运。
+--Chi Sia?--
+"三年了，她眺望每一艘船，看看船的颜色和国旗。“
 
 <video controls width="100%">
 <source src="https://nzybgwsamowcamgizqmk.supabase.co/storage/v1/object/public/who/bf08310e0dcbfd96af23875fba6da65f.mp4"/>

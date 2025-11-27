@@ -80,7 +80,6 @@ The anthem recurs throughout the opera, becoming the dominant motif symbolizing 
 ### Love and Death
 
 --Love duet--
-To Cio-Cio-San, love was never an emotion — it was a solemn vow. When she said, “I changed my faith,” it wasn’t just religious conversion from Shinto to Christianity. It meant she handed her life over for Pinkerton to decide: Who he is defines who I become. After all, just a fifteen-year-old girl still holding the purest expectations toward this world.
 
 In Madama Butterfly, the love duet at the end of Act 1, Viene la sera (“Night Falls”), and the death trio near the end of Act 3, Io so che alle pene (literally: “I know she is suffering”), stand as the two most crucial turning points of the entire opera. One is enchanting, romantic in tone and harmony. The other is heartbreaking, tragic to the bone. They echo each other — beginning with love sealed like a promise, ending with death delivered like a consequence.
 
@@ -108,9 +107,8 @@ As the audience, we already know that only heartbreak and death are approaching.
 <source src="https://nzybgwsamowcamgizqmk.supabase.co/storage/v1/object/public/hum/8d256d08edcf14c87a68534dd2b084d1.mp4"/>
 </video>
 
--- Chi Sia? Who is it? --
+-- Chi Sia?--
 “Three years have passed. She scans every ship that enters the harbor, searching its color, its flag.”
-This is the tragedy at its highest point. To me, it is the most heartbreaking moment in the entire opera — sweet in the way a child waits for her mother to come home, yet we already know: what arrives is not an embrace, but the end that has been waiting for her all along.
 
 <video controls width="100%">
 <source src="https://nzybgwsamowcamgizqmk.supabase.co/storage/v1/object/public/who/bf08310e0dcbfd96af23875fba6da65f.mp4"/>
