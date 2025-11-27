@@ -43,6 +43,14 @@ const posts = [
     title: { en: '0.1 + 0.2 ≠ 0.3', zh: '0.1 + 0.2 ≠ 0.3' },
     excerpt: { en: 'Exploring Numerical Precision in Computers and RREF', zh: '计算机精度的探索以及RREF' },
     file: { en: '/blog/0.1_0.2_0.3.en.md', zh: '/blog/0.1_0.2_0.3.zh.md' }
+  },
+  {
+    slug: 'Empire, Flower, and Butterfly',
+    date: '2025-11-26',
+    category: 'On Music',
+    title: { en: 'Empire, Flower, and Butterfly', zh: '帝国，花，与蝴蝶' },
+    excerpt: { en: 'Talk about Japan’s Meiji Restoration and Puccini’s Madame Butterfly', zh: '谈谈日本明治维新与普契尼《蝴蝶夫人》' },
+    file: { en: '/blog/Madam_butterfly.en.md', zh: '/blog/Madam_butterfly.zh.md' }
   }
 ];
 
