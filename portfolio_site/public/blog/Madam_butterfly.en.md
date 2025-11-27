@@ -101,7 +101,8 @@ This love duet captures the sweetest emotional high for Cio-Cio-San: a wedding f
 That’s why this unbearably beautiful duet feels like glass, glowing and fragile. To Cio-Cio-San, this night is love turned into belief, love poured out like a creed. But to fate, it’s just the calm before the storm — elegant, glowing, irresistible, and heartbreakingly short.
 
 -- Humming Bird --
-Cio-Cio-San waits in silence for Pinkerton — for love, for him, for a dawn she still believes will come. And we, listening, already know that the only thing rising ahead of her is heartache and death. Every time this scene plays, it breaks me in the quietest way. Human emotions can be unbearably beautiful.
+Cio-Cio-San quietly waits for Pinkerton — waits for love, waits for a sunrise, “Our love is quiet and restrained, yet as broad and deep as the ocean.” She sees the arrival of Pinkerton’s American Navy ship, but she does not rush toward him — not into a passionate embrace, not into fervent kisses. Instead, she kneels and sits inside the room, staying awake all night, silently crying and waiting.
+As the audience, we already know that only heartbreak and death are approaching. Yet every time this scene plays out, I can’t help but feel moved, brought to tears. Human emotion is just that beautiful.
 
 <video controls width="100%">
 <source src="https://nzybgwsamowcamgizqmk.supabase.co/storage/v1/object/public/hum/8d256d08edcf14c87a68534dd2b084d1.mp4"/>
