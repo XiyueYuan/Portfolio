@@ -398,6 +398,8 @@ h3 { font-size: 28px; margin: 48px 0 20px; color: var(--muted); }
 .stack .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 24px; }
 .item { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 24px 32px; border-radius: 16px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); }
 .item i, .item img { font-size: 56px; width: 56px; height: 56px; }
+/* Compact tech list under Backtest bubble */
+.tech-list { font-size: 14px; color: var(--muted); margin-top: 6px; }
 .item span { font-size: 18px; color: var(--text); margin-top: 8px; }
 .item:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(124,108,255,0.12); }
 .form { display: grid; gap: 12px; max-width: 560px; }
