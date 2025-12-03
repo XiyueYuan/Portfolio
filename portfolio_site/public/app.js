@@ -118,4 +118,15 @@ function createStarField() {
 // Initialize star field
 createStarField();
 
-// Guestbook removed
+try {
+  const aboutBtn = document.getElementById('btn-about');
+  if (aboutBtn) {
+    aboutBtn.addEventListener('click', () => {
+      const aboutEl = document.getElementById('about');
+      if (aboutEl) aboutEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    if (location.hash === '#about') {
+      history.replaceState(null, '', location.pathname);
+    }
+  }
+} catch (_) {}

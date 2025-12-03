@@ -49,7 +49,7 @@ const posts = [
     date: '2025-11-26',
     category: 'On Music',
     title: { en: 'Empire, Flower, and Butterfly', zh: '帝国，花，与蝴蝶' },
-    excerpt: { en: 'Talk about Japan’s Meiji Restoration and Puccini’s Madame Butterfly', zh: '谈谈日本明治维新与普契尼《蝴蝶夫人》' },
+    excerpt: { en: 'Talk about Japan’s Meiji Restoration and Puccini’s Opera Madame Butterfly', zh: '谈谈日本明治维新与普契尼歌剧《蝴蝶夫人》' },
     file: { en: '/blog/Madam_butterfly.en.md', zh: '/blog/Madam_butterfly.zh.md' }
   }
 ];
