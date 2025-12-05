@@ -333,6 +333,7 @@ h3 { font-size: 28px; margin: 48px 0 20px; color: var(--muted); }
   border-radius: 20px;
   margin-top: 20px;
   margin-bottom: 20px;
+  position: relative;
 }
 
 .education-frame.has-bg {
@@ -352,9 +353,15 @@ h3 { font-size: 28px; margin: 48px 0 20px; color: var(--muted); }
   mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
 }
 
-.education-frame.has-bg > * {
+.education-frame.has-bg > :not(.edu-more) {
   position: relative;
   z-index: 1;
+}
+
+.education-frame.has-bg .edu-more {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
 }
 
 .school-logo {
@@ -564,3 +571,20 @@ h3 { font-size: 28px; margin: 48px 0 20px; color: var(--muted); }
     font-size: 0.95rem;
   }
 }
+
+.edu-more {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 700;
+  transition: color .15s ease, opacity .15s ease;
+  z-index: 2;
+}
+.edu-more:hover { color: var(--text); opacity: 1; }
+.edu-more .arrow { transition: transform .15s ease; }
+.edu-more:hover .arrow { transform: translateX(2px); }

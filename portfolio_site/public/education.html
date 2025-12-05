@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Education | Evan Yuan</title>
+    <meta name="description" content="Courses by quarter — Evan Yuan" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      body { font-family: 'EB Garamond', Garamond, serif; }
+      .home-link { position: fixed; top: 30px; left: 30px; z-index: 10; }
+      main { padding-top: 24px; }
+      .footer { margin-top: 40px; padding: 24px 0; }
+      .qlist { display: flex; flex-direction: column; gap: 12px; }
+      .qitem { border-radius: 14px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); overflow: hidden; }
+      .qitem summary { list-style: none; cursor: pointer; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; color: var(--text); }
+      .qitem summary::-webkit-details-marker { display: none; }
+      .qtitle { font-size: 18px; font-weight: 700; }
+      .qarrow { transition: transform .15s ease; opacity: .8; }
+      .qitem[open] .qarrow { transform: rotate(90deg); }
+      .qcontent { padding: 0 16px 12px; }
+      .course-list { margin: 0; padding: 0; list-style: none; color: var(--muted); font-size: 17px; }
+      .course-list li { line-height: 1.7; padding: 4px 0; }
+    </style>
+  </head>
+  <body>
+    <div class="bg">
+      <div class="stars"></div>
+      <div class="twinkling"></div>
+    </div>
+
+    <a href="/" class="btn outline home-link">← Home</a>
+    <main>
+      <section class="section reveal">
+        <h2>Courses by Quarter</h2>
+        <div class="edu-toolbar" style="display:flex; justify-content:flex-end; gap:8px; margin:12px 0;">
+          <button id="toggle-expand" class="btn outline" type="button">Expand All</button>
+        </div>
+        <div class="qlist">
+          <details class="qitem" open>
+            <summary><span class="qtitle">2025 Autumn</span><span class="qarrow">›</span></summary>
+            <div class="qcontent">
+              <ul class="course-list">
+                <li>CMSC 14100 — Introduction to Computer Science I</li>
+                <li>MATH 18300 — Elementary Functions and Calculus I</li>
+                <li>STAT 22000 — Statistical Methods and Applications</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="qitem" open>
+            <summary><span class="qtitle">2025 Winter</span><span class="qarrow">›</span></summary>
+            <div class="qcontent">
+              <ul class="course-list">
+                <li>CMSC 14200 — Introduction to Computer Science II</li>
+                <li>MATH 18400 — Elementary Functions and Calculus II</li>
+                <li>STAT 24300 — Statistical Theory and Methods</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="qitem" open>
+            <summary><span class="qtitle">2025 Spring</span><span class="qarrow">›</span></summary>
+            <div class="qcontent">
+              <ul class="course-list">
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="qitem" open>
+            <summary><span class="qtitle">2026 Autumn</span><span class="qarrow">›</span></summary>
+            <div class="qcontent">
+              <ul class="course-list">
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="qitem" open>
+            <summary><span class="qtitle">2026 Winter</span><span class="qarrow">›</span></summary>
+            <div class="qcontent">
+              <ul class="course-list">
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="qitem" open>
+            <summary><span class="qtitle">2026 Spring</span><span class="qarrow">›</span></summary>
+            <div class="qcontent">
+              <ul class="course-list">
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>© 2025 Evan Yuan</span>
+    </footer>
+    <script>
+      (function(){
+        try {
+          const btn = document.getElementById('toggle-expand');
+          const items = document.querySelectorAll('.qitem');
+          function allOpen(){ return Array.from(items).every(d => d.open); }
+          function update(){ btn.textContent = allOpen() ? 'Collapse All' : 'Expand All'; }
+          if (btn) {
+            btn.addEventListener('click', () => {
+              const expand = !allOpen();
+              items.forEach(d => { d.open = expand; });
+              update();
+            });
+            update();
+          }
+        } catch(_) {}
+      })();
+    </script>
+    <script src="/app.js"></script>
+  </body>
+</html>
