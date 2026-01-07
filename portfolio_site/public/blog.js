@@ -51,6 +51,14 @@ const posts = [
     title: { en: 'Empire, Flower, and Butterfly', zh: '帝国，花，与蝴蝶' },
     excerpt: { en: 'Talk about Japan’s Meiji Restoration and Puccini’s Opera Madame Butterfly', zh: '谈谈日本明治维新与普契尼歌剧《蝴蝶夫人》' },
     file: { en: '/blog/Madam_butterfly.en.md', zh: '/blog/Madam_butterfly.zh.md' }
+  },
+  {
+    slug: 'Inspiration from a Sandwich',
+    date: '2026-01-07',
+    category: 'Miscellany',
+    title: { en: 'Inspiration from a Sandwich', zh: '三明治的灵感' },
+    excerpt: { en: 'An Interesting Proof Discovered While Eating a Sandwich', zh: '在吃三明治的时候得到的美妙证明' },
+    file: { en: '/blog/sandwich.en.md', zh: '/blog/sandwich.zh.md' }
   }
 ];
 
